@@ -1,16 +1,30 @@
 import {DEPOSIT_INTO_ACCOUNT, SET_BALANCE, WITHDRAW_FROM_ACCOUNT} from "../actions/constants";
+import {read_cookie, bake_cookie} from 'sfcookies';
+
+const BALANCE_COOKIE = 'BALANCE_COOKIE';
 
 const reducer = (state = 0, action) => {
+
+    let balance;
+
     switch (action.type) {
         case SET_BALANCE:
-            return action.balance;
+            balance = action.balance;
+            break;
         case DEPOSIT_INTO_ACCOUNT:
-            return state + action.deposit;
+            balance = state + action.deposit;
+            break;
         case WITHDRAW_FROM_ACCOUNT:
-            return state - action.amount;
+            balance = state - action.amount;
+            break;
         default:
-            return state;
+            balance = parseInt(read_cookie(BALANCE_COOKIE, 10)) || state;
     }
+
+    bake_cookie(BALANCE_COOKIE, balance);
+
+    return balance;
+
 };
 
 export default reducer;

@@ -9,5 +9,13 @@ exports[`Given a wallet component Then it renders correctly 1`] = `
     Balance is: 
     20
   </h4>
+  <hr />
+  <input className=\\"input-wallet\\" type=\\"text\\" onChange={[Function]} />
+  <button className=\\"btn-deposit\\" onClick={[Function]}>
+    Deposit
+  </button>
+  <button className=\\"btn-withdraw\\" onClick={[Function]}>
+    Withdraw
+  </button>
 </div>"
 `;

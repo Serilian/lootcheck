@@ -18,4 +18,12 @@ describe("Given App component", () => {
         expect(app.find("Connect(Wallet)").exists()).toBe(true);
     });
 
-``});
+    it('contains a Loot component', () => {
+        expect(app.find("Connect(Loot)").exists()).toBe(true);
+    });
+    it("displays a link to coindesk", () => {
+        expect(app.find('.coin-link').text()).toEqual("Powered by CoinDesk");
+        expect(app.find('a').props().href).toBe('https://www.coindesk.com/price');
+    });
+
+});

@@ -6,5 +6,13 @@ exports[`Given App component renders properly 1`] = `
     Loot Check
   </h2>
   <Connect(Wallet) />
+  <hr />
+  <Connect(Loot) />
+  <div className=\\"coin-link\\">
+    Powered by 
+    <a href=\\"https://www.coindesk.com/price\\" target=\\"_blank\\">
+      CoinDesk
+    </a>
+  </div>
 </div>"
 `;
